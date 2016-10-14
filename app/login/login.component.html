@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="bg-container">
+        <h1>Login</h1>
+        <br>
+        <form (ngSubmit)="login()">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" required [(ngModel)]="userModel.username"
+                   name="username">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input #password type="password" class="form-control" id="password" [(ngModel)]="userModel.password"
+                   name="password">
+          </div>
+          <button type="submit" id="submit-button" class="btn btn-default">Login</button>
+          <span *ngIf="message" class="message">  <img src='../../imgs/wait16.gif'
+                                                       class="waiting-gif"/> {{message}}</span>
+
+        </form>
+
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+  </div>
+</div>

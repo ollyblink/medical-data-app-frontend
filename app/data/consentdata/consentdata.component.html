@@ -1,0 +1,62 @@
+<div class="container">
+  <div *ngIf="message">
+    <div class="row">
+      <div class="col-md-6">
+        <div id="message" class="bg-container" [style.color]="msgFontColor" [style.background]="msgBgColor">
+          <span>{{message}}</span>
+        </div>
+      </div>
+      <div class="col-md-6"></div>
+    </div>
+    <br/>
+  </div>
+  <div *ngIf="consentedUsers.length > 0">
+    <div class="row">
+      <div class="col-md-6">
+        <div id="choose-user" class="bg-container">
+          <h3>Choose a user</h3>
+          <select id='select-user' class="form-control" (change)="onChange($event.target.value)">
+            <option></option>
+            <option *ngFor="let user of consentedUsers; let i = index" id="user-{{i}}">{{user}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-6"></div>
+    </div>
+    <br>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div id="no-user-found" *ngIf="!consentedUsers || consentedUsers.length === 0">
+        <div class="bg-container">
+          <h3>No users allowed you access to their data!</h3>
+        </div>
+      </div>
+
+      <div id="user-data" *ngIf="selectedUser">
+        <div class="bg-container">
+          <h3>Data of user {{user}}</h3>
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th>Title</th>
+              <th>Added on</th>
+              <th>FVC</th>
+              <th>FEV 1</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let data of spirometryData">
+              <td>{{data.title}}</td>
+              <td>{{data.dateTime}}</td>
+              <td>{{data.fvc}}</td>
+              <td>{{data.fev1}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

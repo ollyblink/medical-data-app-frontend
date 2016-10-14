@@ -1,0 +1,57 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-6">
+      <div *ngIf="message">
+        <div class="bg-container">
+          <span id="message">{{message}}</span>
+        </div>
+        <br/>
+      </div>
+      <div id="users-to-consent" *ngIf="usersToConsent.length > 0">
+        <div class="bg-container">
+          <h3>Choose a user to grant data access to</h3>
+
+          <form (ngSubmit)="grantDataAccess()">
+            <div class="form-group">
+              <select id='select-user' class="form-control" (change)="onChange($event.target.value)">
+                <option></option>
+                <option *ngFor="let user of usersToConsent; let i = index" id="select-user-{{i}}">{{user}}</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <br/>
+      </div>
+      <div *ngIf="(!sentUsers || sentUsers.length === 0)&&(!usersToConsent || usersToConsent.length === 0)">
+        <div class="bg-container">
+          <h3>No users to grant access to your data available...</h3>
+        </div>
+        <br/>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div id='sent-users' *ngIf="sentUsers.length > 0">
+        <div class="bg-container">
+          <h3>The following users can view your data</h3>
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th>Username</th>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let user of sentUsers; let i = index">
+              <td id="user-{{i}}">{{user}}</td>
+              <td style="text-align:right"><a (click)="deleteSentUser(user)"><img
+                src='../../../imgs/1475601111_Remove.png' style="cursor:pointer;"/></a></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

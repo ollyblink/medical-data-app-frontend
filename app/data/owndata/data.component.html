@@ -1,0 +1,78 @@
+<div class="container">
+  <div *ngIf="message">
+    <div class="row">
+      <div class="col-md-6">
+        <div id="message" class="bg-container">
+          <span>{{message}}</span>
+        </div>
+      </div>
+      <div class="col-md-6"></div>
+    </div>
+    <br/>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="bg-container">
+        <div *ngIf="!isAddItemShown">
+          <a style="cursor:pointer;" id="showAddItem" (click)="showAddItem()"><img
+            src='../../../imgs/1475600903_More.png'/> Add new data item</a>
+        </div>
+        <div *ngIf="isAddItemShown">
+          <a style="cursor:pointer;" id="hideAddItem" (click)="showAddItem()"><img
+            src='../../../imgs/1475601014_Less.png'/> Hide</a>
+          <hr>
+        </div>
+
+        <div class="additem" *ngIf="isAddItemShown">
+          <form (ngSubmit)="addDataItem()">
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="text" class="form-control" id="title" required [(ngModel)]="dataItem.title"
+                     name="title">
+            </div>
+            <div class="form-group">
+              <label for="fvc">FVC</label>
+              <input type="text" class="form-control" id="fvc" required [(ngModel)]="dataItem.fvc" name="fvc">
+            </div>
+            <div class="form-group">
+              <label for="fev1">FEV 1</label>
+              <input type="text" class="form-control" id="fev1" required [(ngModel)]="dataItem.fev1" name="fev1">
+            </div>
+            <button type="submit" id="submit-button" class="btn btn-default">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6"></div>
+  </div>
+
+  <br/>
+  <div class='data' *ngIf="spirometryData.length > 0">
+    <div class="bg-container">
+      <h3>Your data</h3>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Title</th>
+          <th>Added on</th>
+          <th>FVC</th>
+          <th>FEV 1</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let data of spirometryData; let i = index">
+          <td>{{data.title}}</td>
+          <td>{{data.dateTime}}</td>
+          <td>{{data.fvc}}</td>
+          <td>{{data.fev1}}</td>
+          <td><a style="cursor:pointer;" id='deleteItem-{{i}}' (click)="deleteDataItem(data.title)"><img
+            src='../../../imgs/1475601111_Remove.png'/></a></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <br/>
+
+</div>
