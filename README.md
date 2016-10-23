@@ -20,7 +20,7 @@ The purpose of this application is to provide a user interface for the backend p
 3. `npm test`: runs test suite. 
 
 ## App Structure
-For each subpage there exists a corresponding component, service, html- and css-file. The structure corresponds to the way apps are built on the official page ("best practice"), where services provide the REST data access to the Middleware and components handle data representation on the sub page. For each component and service, there exists a corresponding .spec file. Spec files are Jasmine test files. 
+For each subpage, there exists a corresponding component, service, html- and css-file. The structure corresponds to the way apps are built on the official page ("best practice"), where services provide REST data access to the middleware and components handle data representation on the sub page. For each component and service, there exists a corresponding .spec file. Spec files are Jasmine test files. 
 ## Functionality
 ### Register and Login
 The Tab "Login" provides an input form that allows a registered user to log in. Should the user not be logged in yet, the "Register" tab has to be clicked before and the new user registered. It will then automatically redirect to the login after successful registration.
