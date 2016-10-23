@@ -8,8 +8,9 @@ This is the frontend part of the medical data app written in <a href="https://an
 The purpose of this application is to provide a user interface for the backend part mentioned before for the user to register, login, and manage both data and consents (see <a href="https://github.com/ollyblink/medical-data-app-backend.git">https://github.com/ollyblink/medical-data-app-backend.git</a> for a proper description of the functionality). 
 
 ## Installation  Guide
+Make sure <a href="https://git-scm.com/downloads">git</a> and <a href="https://nodejs.org/en/">npm</a> (comes with Node.js) are installed.
 
-1. `git clone https://github.com/ollyblink/medical-data-app-fronend.git`
+1. `git clone https://github.com/ollyblink/medical-data-app-frontend`
 2. `cd medical-data-app-frontend`
 3. `npm install`
   
