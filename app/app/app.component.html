@@ -7,7 +7,7 @@
       </ul>
       <ul class="nav navbar-nav" *ngIf="storage.getItem('user')">
         <li dropdown [dropdownToggle]="true">
-          <a style="cursor:pointer;" data-target="#navbar" target="_self" dropdown-open>My Data</a>
+          <a style="cursor:pointer;" data-target="#navbar" target="_self" dropdown-open>My data</a>
           <ul class="dropdown-menu">
             <li><a routerLink="/data">Show data</a></li>
             <li><a routerLink="/grantconsent">Allow access to data</a></li>
