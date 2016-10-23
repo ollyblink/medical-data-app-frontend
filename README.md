@@ -16,7 +16,7 @@ The purpose of this application is to provide a user interface for the backend p
 
 ## Development Guide
  
-2. `npm start`: compiles the typescript files and runs the server (lite in this case). After successful compilation, the web browser opens automatically on the login page. 
+2. `npm start`: compiles the typescript files and runs the server (lite in this case). After successful compilation, the web browser opens automatically on the login page. It runs at http://localhost:3000, which is required to be defined in the backend app for CORS access, see <a href="https://github.com/ollyblink/medical-data-app-backend#development-guide">the Development Guide</a> of the backend, point 2.
 3. `npm test`: runs test suite. 
 
 ## App Structure
