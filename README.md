@@ -2,7 +2,7 @@
 
 ## Introduction and Technology Stack
 
-This is the frontend part of the medical data app written in Angular2 that requires the backend found at <a href="https://github.com/ollyblink/medical-data-app-backend.git">https://github.com/ollyblink/medical-data-app-backend.git</a> to work. Tests make use of Karma and Jasmine. The base structure is taken from the quickstart example at <a href="https://angular.io/docs/ts/latest/quickstart.html">angular.io</a>. 
+This is the frontend part of the medical data app written in <a href="https://angular.io">Angular2</a> that requires the backend found at <a href="https://github.com/ollyblink/medical-data-app-backend.git">https://github.com/ollyblink/medical-data-app-backend.git</a> to work. Tests make use of <a href="https://karma-runner.github.io/1.0/index.html">Karma</a> and <a href="http://jasmine.github.io/">Jasmine</a>. The base structure is taken from the quickstart example at <a href="https://angular.io/docs/ts/latest/quickstart.html">angular.io</a>. 
 
 ## Purpose
 The purpose of this application is to provide a user interface for the backend part mentioned before for the user to register, login, and manage both data and consents (see <a href="https://github.com/ollyblink/medical-data-app-backend.git">https://github.com/ollyblink/medical-data-app-backend.git</a> for a proper description of the functionality). 
@@ -20,7 +20,7 @@ The purpose of this application is to provide a user interface for the backend p
 3. `npm test`: runs test suite. 
 
 ## App Structure
-For each subpage, there exists a corresponding component, service, html- and css-file. The structure corresponds to the way apps are built on the official page ("best practice"), where services provide REST data access to the middleware and components handle data representation on the sub page. For each component and service, there exists a corresponding .spec file. Spec files are Jasmine test files. 
+For each subpage, there exists a corresponding component, service, html- and css-file. However, most css files are empty but may be altered in a later stage. Currently, most of the app is formatted using <a href="http://getbootstrap.com/">Twitter Bootstrap</a> (v. 3.3.6). The structure corresponds to the way apps are built on the <a href="https://angular.io/docs/ts/latest/">official Angular2 page</a>, where services provide REST data access to the middleware and components handle data representation on the sub page. For each component and service, there exists a corresponding .spec file. Spec files are Jasmine test files. 
 ## Functionality
 ### Register and Login
 The Tab "Login" provides an input form that allows a registered user to log in. Should the user not be logged in yet, the "Register" tab has to be clicked before and the new user registered. It will then automatically redirect to the login after successful registration.
